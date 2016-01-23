@@ -11,15 +11,17 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 
-gem 'sdoc', '~> 0.4.0', group: :doc
-
 group :development, :test do
-  gem 'byebug'
+	gem 'sqlite3'
 end
 
-group :development do
-  gem 'web-console', '~> 2.0'
+group :production, do
+	gem 'pg'
+	gem 'rails_12factor'
+end
 
-  gem 'spring'
+group: :doc do
+ # bundle exec rake doc:rails generates the API under doc/api.
+	gem 'sdoc', require: false
 end
 
